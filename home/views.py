@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from blog.models import Post
 from django.utils import timezone
+from django.contrib import messages
 from django.core.mail import send_mail
 
 
@@ -13,20 +14,24 @@ def home(request):
 
 def contact(request):
     if request.method == "POST":
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
-        message = request.POST['message']
-
-        message = 'Name: ' + message_name + '\n' + 'Email: ' + message_email + '\n' + 'Message: ' + message
-
-        # send an email
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        
+        #send Email
         send_mail(
-            message_name, # subject
-            message, # message
-            message_email, # from email
-            [''], # to email
+            #subject
+            'New Message from ' + name,
+            #message
+            message,
+            #from Email
+            email,
+            #to Email
+            ['karanironny25@gmail.com'],
         )
-        return render(request, 'contact.html', {'message_name': message_name, 'message_email': message_email, 'message': message})
+        
+        messages.success(request, 'Your message has been sent!')
+        return render(request, 'contact.html', {'name': name})
     else:
         return render(request, 'contact.html', {})
 
