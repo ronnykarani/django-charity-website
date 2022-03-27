@@ -2,11 +2,9 @@
 {% load static%}
 {% block content %}
 
-{% if name %}
 <center>
-    </h2>Thanks {{name}} we've received your email and we will respond shortly....</h2>
+    <h3 class="text-success">Thanks {{name}} we've received your email and we will respond shortly....</h3>
 </center>
-{% else %}
 <div id="fh5co-contact" class="animate-box">
     <div class="container">
         <form action="#contact" method="post">
@@ -54,5 +52,4 @@
 <!-- END fh5co-contact -->
 <div id="map" class="fh5co-map"></div>
 <!-- END map -->
-{% endif %}
 {% endblock %}
