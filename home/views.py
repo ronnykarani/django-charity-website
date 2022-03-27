@@ -27,7 +27,7 @@ def contact(request):
             #from Email
             email,
             #to Email
-            ['karanironny25@gmail.com'],
+            ['goldenheartsfoundation15@gmail.com'],
         )
         
         messages.success(request, 'Your message has been sent!')
