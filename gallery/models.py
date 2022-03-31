@@ -3,17 +3,18 @@ from django.db import models
 from django.utils import timezone
 
 
-class Photo(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    photo = models.ImageField(upload_to='gallery', blank=True)
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+class Post(models.Model):
+    heading = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to='gallery', blank=True)
 
     def __str__(self):
         return self.title
+
+
+class PostImage(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='gallery', blank=True)
+
+    def __str__(self):
+        return self.post.title
