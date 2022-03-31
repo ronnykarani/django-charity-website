@@ -30,7 +30,7 @@ def contact(request):
             ['goldenheartsfoundation15@gmail.com'],
         )
         
-        messages.success(request, 'Your message has been sent!')
+        #messages.success(request, 'Your message has been sent!')
         return render(request, 'contact.html', {'name': name})
     else:
         return render(request, 'contact.html', {})

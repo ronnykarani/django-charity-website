@@ -2,24 +2,29 @@
 {% load static%}
 {% block content %}
 
-<center>
-    <h3 class="text-success">Thanks {{name}} we've received your email and we will respond shortly....</h3>
-</center>
 <div id="fh5co-contact" class="animate-box">
     <div class="container">
-        <form action="#contact" method="post">
+        <div class="col-md-6">
+            <h3 class="section-title">Our Address</h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <ul class="contact-info">
+                <li><i class="icon-location-pin"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+                <li><i class="icon-phone2"></i>+ 1235 2355 98</li>
+                <li><i class="icon-mail"></i><a href="#">info@yoursite.com</a></li>
+                <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+            </ul>
+        </div>
+
+        {% if name %}
+            <br> <br> <br> <br> <br>
+            <center>
+                <h3 class="text-success">Thanks {{name}} we've received your email and we will respond shortly....</h3>
+            </center>
+        {% else %}
+            <form action="{% url 'contact' %}" method="post">
             {% csrf_token %}
             <div class="row">
-                <div class="col-md-6">
-                    <h3 class="section-title">Our Address</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <ul class="contact-info">
-                        <li><i class="icon-location-pin"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-                        <li><i class="icon-phone2"></i>+ 1235 2355 98</li>
-                        <li><i class="icon-mail"></i><a href="#">info@yoursite.com</a></li>
-                        <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
-                    </ul>
-                </div>
+                
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
@@ -46,7 +51,8 @@
                     </div>
                 </div>
             </div>
-        </form>
+            </form>
+        {% endif %}
     </div>
 </div>
 <!-- END fh5co-contact -->
