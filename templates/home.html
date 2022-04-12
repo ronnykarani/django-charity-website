@@ -9,12 +9,12 @@
 			<div class="col-md-12 text-center heading-section">
 				<h3>About Us</h3>
 				<p>Golden Hearts Family is a value-driven Kenyan based registered CBO . GHF has individuals of vast cultures and backgrounds and embraces inclusion and diversity as this
-					enables us to collaborate and have a variety of thinking to get innovative, efficient
-					and sustainable socio economic-solutions and outcomes out of what we do in
-					alignment with Kenya’s vision 2030 as well as the global Sustainable
-					Development Goals (SDGs). As an organization we aim to:
-					Advocate for mental health awareness in all social sets up and create a platform to speak up (SDG )
-					Promote access to basic needs for the less fortunate within our communities .</p>
+				enables us to collaborate and have a variety of thinking to get innovative, efficient
+				and sustainable socio economic-solutions and outcomes out of what we do in
+				alignment with Kenya’s vision 2030 as well as the global Sustainable
+				Development Goals (SDGs). As an organization we aim to:
+				Advocate for mental health awareness in all social sets up and create a platform to speak up (SDG )
+				Promote access to basic needs for the less fortunate within our communities .</p>
 			</div>
 		</div>
 
@@ -134,23 +134,22 @@
 		</div>
 
 		{% if posts %}
-		{% for post in posts %}			<div class="col mb-4">
-			  <div class="card">
+		{% for post in posts %}		
+		<div class="col mb-4">
+			<div class="card">
 				<div class="view overlay">
-				  <img class="card-img-top" src="{{post.image.url}}" alt="">
-				  <a href="#!">
+					<img class="card-img-top" src="{{post.image.url}}" alt="">
+					<a href="#!">
 					<div class="mask rgba-white-slight"></div>
-				  </a>
+					</a>
 				</div>
 				<div class="card-body">
-				  <h4 class="card-title">{{post.heading}}</h4>
-				  <p class="card-text">{{post.description}}</p>
-				  <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Read more</a>
+					<h4 class="card-title">{{post.heading}}</h4>
+					<p class="card-text">{{post.description}}</p>
+					<a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">Read more</a>
 				</div>
-			  </div>
 			</div>
-		  </div>
-		
+		</div>
 		{% endfor %}
 		{% else %}
 		<h2 class = "text-center text-danger">No posts yet!</h2>
