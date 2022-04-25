@@ -24,7 +24,7 @@ urlpatterns = [
     
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
-    path('gallery/', include('gallery.urls')),
+    
 ]
 
 if settings.DEBUG:
