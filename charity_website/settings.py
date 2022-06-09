@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
     'home',
     'blog',
-    'gallery',
 ]
 
 MIDDLEWARE = [
@@ -154,7 +153,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = False
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 '''
 
 # Send Mail (for production)
@@ -163,8 +162,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # myaccount.google.com/apppasswords
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'goldenheartfam@gmail.com'#config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = 'dzgkvlbpvffintto'#config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 

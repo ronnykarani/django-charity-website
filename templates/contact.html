@@ -2,60 +2,58 @@
 {% load static%}
 {% block content %}
 
-<div id="fh5co-contact" class="animate-box">
-    <div class="container">
-        <div class="col-md-6">
-            <h3 class="section-title">Our Address</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <ul class="contact-info">
-                <li><i class="icon-location-pin"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-                <li><i class="icon-phone2"></i>+ 1235 2355 98</li>
-                <li><i class="icon-mail"></i><a href="#">info@yoursite.com</a></li>
-                <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
-            </ul>
-        </div>
+    <div id="fh5co-contact" class="animate-box">
+        <div class="container">
+            <div class="col-md-6">
+                <h3 class="section-title">Contact Us</h3>
+                <p>For any queries, suggestions and partnership. Talk to us or visit our offices!</p>
+                <ul class="contact-info">
+                    <li><i class="icon-location-pin"></i>Address</li>
+                    <li><i class="icon-phone2"></i>+254 701 234 567</li>
+                    <li><i class="icon-mail"></i><a href="#">contact@goldenheartfamily@gmail.com</a></li>
+                    <li><i class="icon-globe2"></i><a href="#">www.goldenheartfamily.com</a></li>
+                </ul>
+            </div>
 
-        {% if name %}
-            <br> <br> <br> <br> <br>
-            <center>
-                <h3 class="text-success">Thanks {{name}} we've received your email and we will respond shortly....</h3>
-            </center>
-        {% else %}
-            <form action="{% url 'contact' %}" method="post">
-            {% csrf_token %}
-            <div class="row">
-                
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name" name="name">
+            {% if name %}
+                <br> <br> <br> <br> <br>
+                <center>
+                    <h3 class="text-success">Thanks {{name}} we've received your email and we will respond shortly....</h3>
+                </center>
+            {% else %}
+                <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name" name="name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email"
-                                name="email">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email"
+                                    name="email">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message" name="message"></textarea>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message" name="message"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="submit" value="Send Message" class="btn btn-primary">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Send Message" class="btn btn-primary">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </form>
-        {% endif %}
+                </form>
+            {% endif %}
+        </div>
     </div>
-</div>
-<!-- END fh5co-contact -->
-<div id="map" class="fh5co-map"></div>
-<!-- END map -->
+
 {% endblock %}
