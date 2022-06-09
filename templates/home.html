@@ -2,304 +2,323 @@
 {% load static %}
 {% block content %}
 
-<!-- about us -->
-<div id="fh5co-feature-product" class="fh5co-section-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center heading-section">
-				<h3>About Us</h3>
-				<p>Golden Hearts Family is a value-driven Kenyan based registered CBO . GHF has individuals of vast cultures and backgrounds and embraces inclusion and diversity as this enables us to collaborate and have a variety of thinking to get innovative, efficient and sustainable socio economic-solutions and outcomes out of what we do in alignment with Kenya’s vision 2030 as well as the global Sustainable Development Goals (SDGs). As an organization we are guided by a value system that consists of:
-					I. Love
-					II. Honesty
-					III. Selflessness 
-					IV. Compassion </p>
-			</div>
-		</div>
-
-		<div class="row row-bottom-padded-md">
-			<div class="col-md-6 text-center animate-box">
-				<p><img src="{% static 'images/aboutus1.JPG' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-			</div>
-			<div class="col-md-6 text-center animate-box">
-				<p><img src="{% static 'images/aboutus2.JPG' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="feature-text">
-					<h3>Selflessness</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="feature-text">
-					<h3>Compassion</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="feature-text">
-					<h3>Charity</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- end:about us -->
-
-
-<!-- our gallery 
-<div id="fh5co-portfolio">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
-				<h3>Our Gallery</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-			</div>
-		</div>
-
-	
-		<div class="col mb-4">
-			<div class="card">
-				<div class="view overlay">
-					<img class="card-img-top" src="{{post.image.url}}" alt="">
-					<a href="#!">
-					<div class="mask rgba-white-slight"></div>
-					</a>
-				</div>
-				<div class="card-body">
-					<h4 class="card-title"></h4>
-					<p class="card-text"></p>
-					<a href="" class="btn btn-primary btn-md">Read more</a>
-				</div>
-			</div>
-		</div>
-		<h2 class = "text-center text-danger">No posts yet!</h2>
-
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4 text-center animate-box">
-				<a href="#" class="btn btn-primary btn-lg">See Gallery</a>
-			</div>
-		</div>
-
-		
-	</div>
-</div>
-end:our gallery -->
-
-
-<!-- our blog -->
-<div id="fh5co-blog-section" class="fh5co-section-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-				<h3>Recent Blog Posts</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		{% if posts %}
-		{% for post in posts %}
-		<div class="row row-bottom-padded-md">
-			<div class="col-lg-4 col-md-4 col-sm-6">
-				<div class="fh5co-blog animate-box">
-					<a href="#"><img class="img-responsive" src="{{ post.photo.url }}" alt=""></a>
-					<div class="blog-text">
-						<div class="prod-title">
-							<h3><a href=""#>{{ post.title }}</a></h3>
-							<span class="posted_by">{{ post.author }}</span>
-							<span class="posted_by">{{ post.published_date }}</span>
-							<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-							<p>{{ post.text|safe|truncatewords:20 }}</p>
-							<p><a href="#">Learn More...</a></p>
-						</div>
-					</div> 
-				</div>
-			</div>
-			<div class="clearfix visible-md-block"></div>
-		</div>
-		{% endfor %}
-		{% else %}
-		<h2 class = "text-center text-danger">No posts yet!</h2>
-		{% endif %}
-
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4 text-center animate-box">
-				<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-			</div>
-		</div>
-
-	</div>
-</div>
-<!-- end:our blog-->
-
-
-<!-- our projects -->
-<div id="projects" id="fh5co-services-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-				<h3>Our Projects</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row text-center">
-			<div class="col-md-4 col-sm-4">
-				<div class="services animate-box">
-					<span><i class="icon-heart"></i></span>
-					<h3>Mental Health</h3>
-					<p>An outreach program aimed to advocate for mental health awareness within our community through educating people on the importance of psychological, emotional and social well-being. We also aim at ensuring access of professional support for mental health cases within the society.</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<div class="services animate-box">
-					<span><i class="icon-heart"></i></span>
-					<h3>Mentorship</h3>
-					<p>Guided by the ubuntu philosophy and the African saying “it takes a village to raise a child “ we endeavor to be part of the growth and empowerment  of the less fortunate kids through mentorship and promotion of equality by ensuring access to education  through the books-drive and the ‘Masomo’ initiatives.</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<div class="services animate-box">
-					<span><i class="icon-heart"></i></span>
-					<h3>Feeding Program</h3>
-					<p>Through this program we help raise a nutrition healthy community by providing food stuffs for the less privileged and also providing means of achieving a sustainable and a self-sufficient community.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-features">
+	<!-- about us -->
+	<div id="fh5co-feature-product" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-					<h3>Support Our Projects</h3>
+				<div class="col-md-12 text-center heading-section">
+					<h3>About Us</h3>
+					<p>Golden Hearts Family is a value-driven Kenyan based registered CBO . GHF has individuals of vast cultures and backgrounds and embraces inclusion and diversity as this enables us to collaborate and have a variety of thinking to get innovative, efficient and sustainable socio economic-solutions and outcomes out of what we do in alignment with Kenya’s vision 2030 as well as the global Sustainable Development Goals (SDGs). As an organization we are guided by a value system that consists of: Love, Honesty, Selflessness and Compassion. </p>
+				</div>
+			</div>
+
+			<div class="row row-bottom-padded-md">
+				<div class="col-md-6 text-center animate-box">
+					<p><img src="{% static 'images/aboutus1.JPG' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
+				</div>
+				<div class="col-md-6 text-center animate-box">
+					<p><img src="{% static 'images/aboutus2.JPG' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12 text-center heading-section">
+					<h3>Our Mission</h3>
+					<p>We aim at be a source of inspiration, motivation and beacon of by empoworing  the less fortunate in our society, to promote equity and propel our society to greater heights by unleashing our full potential as we share and celebrate life. Some of our core values include:</p>
+				</div>
+				<div class="col-md-4">
+					<div class="feature-text">
+						<h3>Selflessness</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="feature-text">
+						<h3>Compassion</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="feature-text">
+						<h3>Charity</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end:about us -->
+
+
+	<!-- our gallery 
+	<div id="fh5co-portfolio">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
+					<h3>Our Gallery</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
 				</div>
 			</div>
+
+		
+			<div class="col mb-4">
+				<div class="card">
+					<div class="view overlay">
+						<img class="card-img-top" src="{{post.image.url}}" alt="">
+						<a href="#!">
+						<div class="mask rgba-white-slight"></div>
+						</a>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title"></h4>
+						<p class="card-text"></p>
+						<a href="" class="btn btn-primary btn-md">Read more</a>
+					</div>
+				</div>
+			</div>
+			<h2 class = "text-center text-danger">No posts yet!</h2>
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 text-center animate-box">
+					<a href="#" class="btn btn-primary btn-lg">See Gallery</a>
+				</div>
+			</div>
+
+			
 		</div>
+	</div>
+	end:our gallery -->
+
+
+	<!-- our projects -->
+	<div id="projects" id="fh5co-services-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3>Our Projects</h3>
+					<p>A list of some of the programmes we take part and organize to have a positive impact in the society and push humanity forward through unanimous programs.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-4 col-sm-4">
+					<div class="services animate-box">
+						<span><i class="icon-heart"></i></span>
+						<h3>Mental Health</h3>
+						<p>An outreach program aimed to advocate for mental health awareness within our community through educating people on the importance of psychological, emotional and social well-being. We also aim at ensuring access of professional support for mental health cases within the society.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="services animate-box">
+						<span><i class="icon-heart"></i></span>
+						<h3>Mentorship</h3>
+						<p>Guided by the ubuntu philosophy and the African saying “it takes a village to raise a child “ we endeavor to be part of the growth and empowerment  of the less fortunate kids through mentorship and promotion of equality by ensuring access to education  through the books-drive and the ‘Masomo’ initiatives.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="services animate-box">
+						<span><i class="icon-heart"></i></span>
+						<h3>Feeding Program</h3>
+						<p>Through this program we help raise a nutrition healthy community by providing food stuffs for the less privileged and also providing means of achieving a sustainable and a self-sufficient community.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-					<div class="feature-left">
-						<span class="icon">
-							<i class="icon-profile-male"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Become a volunteer</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-							<p><a href="#">Learn More</a></p>
+		<div id="fh5co-features">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Support Our Projects</h3>
+						<p>Through a myriad of charitable acts, you can become a part of the 🧡 Golden Heart Family</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-profile-male"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Become a volunteer</h3>
+								<p>You can volunteer to take part in any of our charitable acts,For instance you can volunteer as a speaker in any of future activities. Contact Us for more details </p>
+								<p><a href="{% url 'contact' %}">Contact</a></p>
+							</div>
 						</div>
+
 					</div>
 
-				</div>
-
-				<div class="col-md-4">
-					<div class="feature-left">
-						<span class="icon">
-							<i class="icon-happy"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Happy Giving</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-							<p><a href="#">Learn More</a></p>
+					<div class="col-md-4">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-happy"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Charity Gifts and Donations</h3>
+								<p>We have no limits to whatever our charitable friends and suppporters offfer us. We accept everything from clothes,shoes,farm products, E.T.C. Contact Us for more information</p>
+								<p><a href="{% url 'contact' %}">Contact</a></p>
+							</div>
 						</div>
-					</div>
 
-				</div>
-				<div class="col-md-4">
-					<div class="feature-left">
-						<span class="icon">
-							<i class="icon-wallet"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Donation</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-							<p><a href="#">Learn More</a></p>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-wallet"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Money Donations</h3>
+								<p>Every monetary donation you make helps us run our programmes smoothly. We accept Donations from all over the world</p>
+								<p><a href="#">Donate Now</a></p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
-
-</div>
-<!-- end:our projects -->
+	<!-- end:our projects -->
 
 
-<!--Our Team-->
-<div id="fh5co-content-section" class="fh5co-section-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                <h3>Our Team</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="fh5co-team text-center animate-box">
-                    <figure>
-                        <img src="{% static 'images/kabiru.jpg' %}" alt="user">
-                    </figure>
+	<!-- our team -->
+	<div id="fh5co-content-section" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3>Our Team</h3>
+					<p>List of our dedicated and selfless team leaders that spearhead our vision and mission our  society</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="fh5co-team text-center animate-box">
+						<figure>
+							<img src="{% static 'images/kabiru.jpg' %}" alt="user">
+						</figure>
 
-                    <div>
-                        <h3>Kabiru Karanja</h3>
-                        <p><span>Founder</span></p>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                    
-                    <p class="fh5co-social-icons">
-                        <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-linkedin2"></i></a>
-                        <a href="#"><i class="icon-facebook3"></i></a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fh5co-team text-center animate-box">
-                    <figure>
-                        <img src="{% static 'images/kabiru.jpg' %}" alt="user">
-                    </figure>
-                    <div>
-                        <h3>John Doe</h3>
-                        <p><span>Founder</span></p>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                    <p class="fh5co-social-icons">
-                        <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-linkedin2"></i></a>
-                        <a href="#"><i class="icon-facebook3"></i></a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fh5co-team text-center animate-box">
-                    <figure>
-                        <img src="{% static 'images/kabiru.jpg' %}" alt="user">
-                    </figure>
-                    <div>
-                        <h3>John Doe</h3>
-                        <p><span>Founder</span></p>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                    <p class="fh5co-social-icons">
-                        <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-linkedin2"></i></a>
-                        <a href="#"><i class="icon-facebook3"></i></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END Our Team-->
+						<div>
+							<h3>Kabiru Karanja</h3>
+							<p><span>Founder</span></p>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						
+						<p class="fh5co-social-icons">
+							<a href="#"><i class="icon-twitter2"></i></a>
+							<a href="#"><i class="icon-linkedin2"></i></a>
+							<a href="#"><i class="icon-facebook3"></i></a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-team text-center animate-box">
+						<figure>
+							<img src="{% static 'images/timo.JPG' %}" alt="user">
+						</figure>
+						<div>
+							<h3>Timothy Mugambi</h3>
+							<p><span>Founder</span></p>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<p class="fh5co-social-icons">
+							<a href="#"><i class="icon-twitter2"></i></a>
+							<a href="#"><i class="icon-linkedin2"></i></a>
+							<a href="#"><i class="icon-facebook3"></i></a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-team text-center animate-box">
+						<figure>
+							<img src="{% static 'images/kabiru.jpg' %}" alt="user">
+						</figure>
+						<div>
+							<h3>Nelson Mwangi</h3>
+							<p><span>Founder</span></p>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<p class="fh5co-social-icons">
+							<a href="#"><i class="icon-twitter2"></i></a>
+							<a href="#"><i class="icon-linkedin2"></i></a>
+							<a href="#"><i class="icon-facebook3"></i></a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-team text-center animate-box">
+						<figure>
+							<img src="{% static 'images/kabiru.jpg' %}" alt="user">
+						</figure>
+						<div>
+							<h3>Morris Njoroge</h3>
+							<p><span>Founder</span></p>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<p class="fh5co-social-icons">
+							<a href="#"><i class="icon-twitter2"></i></a>
+							<a href="#"><i class="icon-linkedin2"></i></a>
+							<a href="#"><i class="icon-facebook3"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end our team -->
+
+
+	<!-- our blog -->
+	<div id="fh5co-blog-section" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3>Recent Blog Posts</h3>
+					<p>Through our blog section we document our various programmes and offer insight and motivation to our society.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			{% if posts %}
+			{% for post in posts %}
+			<div class="row row-bottom-padded-md">
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="fh5co-blog animate-box">
+						<a href="#"><img class="img-responsive" src="{{ post.photo.url }}" alt=""></a>
+						<div class="blog-text">
+							<div class="prod-title">
+								<h3><a href=""#>{{ post.title }}</a></h3>
+								<span class="posted_by">{{ post.author }}</span>
+								<span class="posted_by">{{ post.published_date }}</span>
+								<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+								<p>{{ post.text|safe|truncatewords:20 }}</p>
+								<p><a href="">Learn More...</a></p>
+							</div>
+						</div> 
+					</div>
+				</div>
+				<div class="clearfix visible-md-block"></div>
+			</div>
+			{% endfor %}
+			{% else %}
+			<h2 class = "text-center text-danger">No posts yet!</h2>
+			{% endif %}
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 text-center animate-box">
+					<a href="{% url 'blog' %}" class="btn btn-primary btn-lg">View More</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- end:our blog-->
+
 {% endblock %}
